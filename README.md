@@ -1,11 +1,13 @@
 ## Chrome Scrape
-An example template extension to use Chrome browser for automated web scraping purposes
+An example template extension to use Chrome browser for automated web scraping purposes<br>
 
 ## How It Works
 
 The scraper runs as a Chrome extension content script and crawls a predefined list of URLs.
 
 The important part is that navigating with `location.href` destroys the current page's JavaScript context. The extension therefore uses `localStorage` to preserve the scraper's state between page navigations.
+
+Watch YouTube demo: https://youtu.be/KTFyrbh-6Pw
 
 ### Scraping flow
 
