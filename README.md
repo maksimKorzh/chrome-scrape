@@ -1,4 +1,4 @@
-# Chrome Scrape
+## Chrome Scrape
 An example template extension to use Chrome browser for automated web scraping purposes
 
 ## How It Works
@@ -138,3 +138,53 @@ In this project, it effectively serves as a small state store containing:
 ```
 
 This makes it possible for a single extension content script to crawl multiple pages even though each `location.href` navigation creates a completely new JavaScript execution context.
+
+## How to Install
+
+This extension is intended to be loaded locally as an **unpacked Chrome extension**.
+
+### 1. Download the repository
+
+Clone the repository or download it as a ZIP file and extract it to a local directory.
+
+### 2. Open Chrome Extensions
+
+Open:
+
+```text
+chrome://extensions
+```
+
+### 3. Enable Developer Mode
+
+Turn on **Developer mode** using the switch in the top-right corner.
+
+### 4. Load the extension
+
+Click **Load unpacked** and select the directory containing the extension's `manifest.json` file.
+
+For example:
+
+```text
+my-scraper/
+├── manifest.json
+├── content.js
+```
+
+Chrome will add the extension to the list of installed extensions.
+
+### 5. Run the scraper
+
+Navigate to "https://quotes.toscrape.com/"
+
+The extension's content script will be injected automatically.
+
+Reload page one more time and the scraper starts working.
+
+### 6. Important
+
+Make sure to turn extnesion off when scraping is done.
+
+If something goes wrong you may want to clear local browser storage manually,
+
+to do so type "localStorage.removeItem('scraper');" in DevTools console and hit Enter.
